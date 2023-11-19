@@ -43,7 +43,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "${{ steps.version.outputs.VERSION }}"
-          prerelease: true
+          prerelease: false
           title: "v${{ steps.version.outputs.VERSION }}"
           files: |
             build/libs/*.jar
