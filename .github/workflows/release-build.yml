@@ -64,7 +64,7 @@ jobs:
       - name: Select next version
         id: select-next-version
         run: |-
-          case $INPUT_BUMP in
+          case ${{ github.event.inputs.bump }} in
             major) echo "NEXT_VERSION=${{ steps.version-bumps.outputs.major }}" >> "$GITHUB_OUTPUT";;
             minor) echo "NEXT_VERSION=${{ steps.version-bumps.outputs.minor }}" >> "$GITHUB_OUTPUT";;
             patch) echo "NEXT_VERSION=${{ steps.version-bumps.outputs.patch }}" >> "$GITHUB_OUTPUT";;
