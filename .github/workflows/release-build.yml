@@ -78,5 +78,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add gradle.properties
-          git commit -m "Bump version to ${{ steps.select-next-version.outputs.NEXT_VERSION }}"
+          git commit -m "chore: Bump version to ${{ steps.select-next-version.outputs.NEXT_VERSION }}"
           git push
