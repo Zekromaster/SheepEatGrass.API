@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "sheepeatgrass_api",
+  "version": "${version}",
+
+  "name": "Sheep Eat Grass API",
+  "description": "An API to allow definition of sheep's grass-eating behaviour, for SheepEatGrass mod.",
+  "authors": [
+    "Zekromaster"
+  ],
+  "contact": {
+    "homepage": "https://github.com/zekromaster/SheepEatGrass.API",
+    "sources": "https://github.com/zekromaster/SheepEatGrass.API",
+    "issues": "https://gtihub.com/zekromasteSheepEatGrass.API/issues"
+  },
+
+  "license": "CC0",
+  "icon": "assets/sheepeatgrass_api/icon.png",
+
+  "environment": "*",
+  "mixins": [],
+
+  "depends": {
+    "minecraft": "1.0.0-beta.7.3"
+  }
+}
