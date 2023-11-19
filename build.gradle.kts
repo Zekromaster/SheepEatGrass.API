@@ -3,12 +3,12 @@ plugins {
     id("maven-publish")
 }
 
-val maven_group: String by project;
-val minecraft_version: String by project;
-val yarn_mappings: String by project;
-val loader_version: String by project;
-val archives_base_name: String by project;
-val next_version: String by project;
+val maven_group: String by project
+val minecraft_version: String by project
+val yarn_mappings: String by project
+val loader_version: String by project
+val archives_base_name: String by project
+val next_version: String by project
 
 
 java {
@@ -17,8 +17,8 @@ java {
     withSourcesJar()
 }
 
-group = maven_group;
-version = next_version;
+group = maven_group
+version = next_version
 
 if (!project.hasProperty("releasing")) {
     version = "${version}-SNAPSHOT"
@@ -74,16 +74,14 @@ tasks.jar {
     }
 }
 
-if (project.hasProperty("releasing")) {
-    publishing {
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/Zekromaster/SheepEatGrass.API") // Github Package
-                credentials {
-                    username = System.getenv("GITHUB_ACTOR")
-                    password = System.getenv("GITHUB_TOKEN")
-                }
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Zekromaster/SheepEatGrass.API") // Github Package
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
