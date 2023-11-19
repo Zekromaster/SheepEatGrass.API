@@ -1,19 +1,16 @@
 package net.zekromaster.minecraft.sheepeatgrass.api.blocks;
 
-/**
- * Represents a location relative to a sheep.
- *
- * @param offsetX The X offset.
- * @param offsetY The Y offset.
- * @param offsetZ The Z offset.
- */
-public record EatingLocation(
-    int offsetX,
-    int offsetY,
-    int offsetZ
-) {
+public enum EatingLocation {
+    SAME_BLOCK(0, 0, 0),
+    UNDERNEATH(0, -1, 0);
 
-    public static final EatingLocation SAME_BLOCK = new EatingLocation(0, 0, 0);
-    public static final EatingLocation UNDERNEATH = new EatingLocation(0, -1, 0);
+    public final int offsetX;
+    public final int offsetY;
+    public final int offsetZ;
 
+    EatingLocation(int offsetX, int offsetY, int offsetZ) {
+        this.offsetX = offsetX;
+        this.offsetY = offsetY;
+        this.offsetZ = offsetZ;
+    }
 }

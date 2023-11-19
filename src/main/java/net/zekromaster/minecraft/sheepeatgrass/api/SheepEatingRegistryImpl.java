@@ -5,7 +5,6 @@ import net.zekromaster.minecraft.sheepeatgrass.api.blocks.EatingLocation;
 import net.zekromaster.minecraft.sheepeatgrass.api.blocks.matchers.BlockMatcher;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 final class SheepEatingRegistryImpl implements SheepEatingRegistry {
 
@@ -29,10 +28,7 @@ final class SheepEatingRegistryImpl implements SheepEatingRegistry {
 
     @Override
     public Set<EatingLocation> possibleLocations() {
-        return registry
-            .stream()
-            .map(RegistryEntry::location)
-            .collect(Collectors.toSet());
+        return Set.of(EatingLocation.values());
     }
 
     private record RegistryEntry(
