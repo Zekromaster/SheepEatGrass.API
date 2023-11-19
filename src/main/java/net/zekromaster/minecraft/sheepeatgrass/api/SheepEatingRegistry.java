@@ -5,7 +5,7 @@ import net.zekromaster.minecraft.sheepeatgrass.api.blocks.BlockReference;
 import net.zekromaster.minecraft.sheepeatgrass.api.blocks.EatingLocation;
 
 import java.util.Optional;
-import java.util.Set;
+import java.util.SortedSet;
 
 public interface SheepEatingRegistry {
 
@@ -51,10 +51,12 @@ public interface SheepEatingRegistry {
     Optional<BlockReference> get(EatingLocation location, BlockReference block);
 
     /**
-     * Gets the set of all possible eating locations.
+     * Gets the set of all possible eating locations, sorted by
+     * reverse y, then x, then z. This matches the natural ordering
+     * of the {@link EatingLocation} enum.
      *
      * @return The set of all possible eating locations.
      */
-    Set<EatingLocation> possibleLocations();
+    SortedSet<EatingLocation> possibleLocations();
 
 }

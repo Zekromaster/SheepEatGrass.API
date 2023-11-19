@@ -42,8 +42,8 @@ final class SheepEatingRegistryImpl implements SheepEatingRegistry {
     }
 
     @Override
-    public Set<EatingLocation> possibleLocations() {
-        return Set.of(EatingLocation.values());
+    public SortedSet<EatingLocation> possibleLocations() {
+        return new TreeSet<>(Arrays.asList(EatingLocation.values()));
     }
 
     private record RegistryEntry(
