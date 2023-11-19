@@ -1,4 +1,4 @@
-name: Build from Trunk
+name: Build Release
 
 on:
   workflow_dispatch:
