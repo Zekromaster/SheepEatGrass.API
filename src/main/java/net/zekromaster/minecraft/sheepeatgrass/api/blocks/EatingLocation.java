@@ -1,6 +1,6 @@
 package net.zekromaster.minecraft.sheepeatgrass.api.blocks;
 
-public enum EatingLocation implements Comparable<EatingLocation> {
+public enum EatingLocation {
     UNDERNEATH(0, -1, 0),
     SAME_BLOCK(0, 0, 0);
 
