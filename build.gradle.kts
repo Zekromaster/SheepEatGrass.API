@@ -9,6 +9,7 @@ val yarn_mappings: String by project
 val loader_version: String by project
 val archives_base_name: String by project
 val next_version: String by project
+val artifact_id: String by project
 
 
 java {
@@ -75,6 +76,12 @@ tasks.jar {
 }
 
 publishing {
+    publications {
+        register("mavenJava", MavenPublication::class) {
+            artifactId = artifact_id
+            from(components["java"])
+        }
+    }
     repositories {
         maven {
             name = "GitHubPackages"
